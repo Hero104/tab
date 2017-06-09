@@ -26,7 +26,25 @@
             background-color: aqua;
         }
     </style>
- 
+ <script>
+        window.onload=function(){
+            var oDox=document.getElementById("box");
+            var aBtn=document.getElementsByTagName("input");
+            var aDiv=oDox.getElementsByTagName("div");
+
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onclick=function(){
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].className="";
+                        aDiv[i].style.display="none"
+                    }
+                    this.className="ac";
+                    aDiv[this.index].style.display="block"
+                }
+            }
+        }
+    </script>
    
 </head>
 <body>
